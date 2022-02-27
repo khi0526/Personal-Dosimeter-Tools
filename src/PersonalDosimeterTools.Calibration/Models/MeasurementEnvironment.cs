@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace PersonalDosimeterTools.Calibration.Models;
 
@@ -13,4 +15,5 @@ public class MeasurementEnvironment
 
 	public RadioactiveSource RadioactiveSource { get; set; }
 	public ReferenceDosimeter ReferenceDosimeter { get; set; }
+	public ICollection<MeasurementResult> MeasurementResults { get; } = new ObservableCollection<MeasurementResult>();
 }

@@ -1,4 +1,7 @@
-﻿namespace PersonalDosimeterTools.Calibration.Models;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
+namespace PersonalDosimeterTools.Calibration.Models;
 
 public class ReferenceDosimeter
 {
@@ -7,4 +10,6 @@ public class ReferenceDosimeter
 	public DosimeterType Type { get; set; }
 	public string? Nickname { get; set; }
 	public double? CalibrationValue { get; set; }
+
+	public ICollection<MeasurementEnvironment> MeasurementEnvironments { get; } = new ObservableCollection<MeasurementEnvironment>();
 }

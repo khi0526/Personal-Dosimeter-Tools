@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace PersonalDosimeterTools.Calibration.Models;
 
@@ -10,4 +12,5 @@ public class RadioactiveSource
 	public double Activity { get; set; }
 
 	public Isotope Isotope { get; set; }
+	public ICollection<MeasurementEnvironment> MeasurementEnvironments { get; } = new ObservableCollection<MeasurementEnvironment>();
 }

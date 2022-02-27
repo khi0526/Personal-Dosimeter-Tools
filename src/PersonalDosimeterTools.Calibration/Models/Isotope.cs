@@ -1,4 +1,7 @@
-﻿namespace PersonalDosimeterTools.Calibration.Models;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
+namespace PersonalDosimeterTools.Calibration.Models;
 
 public class Isotope
 {
@@ -7,4 +10,6 @@ public class Isotope
 	public string Symbol { get; set; }
 	public int NeutronNumber { get; set; }
 	public double HalfLife { get; set; }
+
+	public ICollection<RadioactiveSource> RadioactiveSources { get; } = new ObservableCollection<RadioactiveSource>();
 }

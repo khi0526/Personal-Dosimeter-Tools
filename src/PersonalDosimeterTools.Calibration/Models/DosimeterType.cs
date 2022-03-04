@@ -3,9 +3,9 @@
 public enum DosimeterType
 {
 	Radico,
-	Rade,
 	RaceC,
 	Card,
 	Pen,
-	Badge
+	Clip,
+	GammaProve
 }

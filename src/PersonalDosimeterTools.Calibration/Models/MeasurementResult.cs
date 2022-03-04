@@ -9,7 +9,7 @@ public class MeasurementResult
 	public string DosimeterName { get; set; }
 	public double Average { get; set; }
 	public double StandardDeviation { get; set; }
-	public List<uint> Cpses { get; set; }
+	public byte[] CpsesBinary { get; set; }
 
 	public MeasurementEnvironment Environment { get; set; }
 }

@@ -8,7 +8,7 @@ public class MeasurementEnvironment
 {
 	public long Id { get; set; }
 	public RadioactiveSource RadioactiveSource { get; set; } = null!;
-	public ReferenceDosimeter ReferenceDosimeter { get; set; } = null!;
+	public ReferenceDosimeter? ReferenceDosimeter { get; set; }
 	public DateTimeOffset BeginDate { get; set; }
 	public int Period { get; set; }
 	public double Distance { get; set; }

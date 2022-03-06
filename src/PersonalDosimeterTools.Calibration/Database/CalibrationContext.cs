@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PersonalDosimeterTools.Calibration.Database.Configurations;
 using PersonalDosimeterTools.Calibration.Models;
 
 namespace PersonalDosimeterTools.Calibration.Database;
@@ -23,6 +24,11 @@ public class CalibrationContext : DbContext
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
-		
+		modelBuilder
+			.ApplyConfiguration(new IsotopeConfiguration())
+			.ApplyConfiguration(new RadioactiveSourceConfiguration())
+			.ApplyConfiguration(new ReferenceDosimeterConfiguration())
+			.ApplyConfiguration(new MeasurementEnvironmentConfiguration())
+			.ApplyConfiguration(new MeasurementResultConfiguration());
 	}
 }

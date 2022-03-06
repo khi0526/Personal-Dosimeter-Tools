@@ -5,11 +5,12 @@ using PersonalDosimeterTools.Calibration.Models;
 
 namespace PersonalDosimeterTools.Calibration.Database.Configurations;
 
-internal class RadioactiveSourceConfiguration : IEntityTypeConfiguration<RadioactiveSource>
+internal class MeasurementEnvironmentConfiguration : IEntityTypeConfiguration<MeasurementEnvironment>
 {
-	public void Configure(EntityTypeBuilder<RadioactiveSource> builder)
+	public void Configure(EntityTypeBuilder<MeasurementEnvironment> builder)
 	{
-		builder.Property(s => s.ReferenceDate)
+		builder.Property(e => e.BeginDate)
 			.HasConversion(dto => dto.ToUnixTimeSeconds(), sec => DateTimeOffset.FromUnixTimeSeconds(sec));
+
 	}
 }

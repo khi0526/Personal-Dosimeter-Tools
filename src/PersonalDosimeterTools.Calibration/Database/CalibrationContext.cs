@@ -6,11 +6,12 @@ namespace PersonalDosimeterTools.Calibration.Database;
 public class CalibrationContext : DbContext
 {
 	private readonly string _path;
-	public DbSet<Isotope> Isotopes { get; set; }
-	public DbSet<RadioactiveSource> RadioactiveSources { get; set; }
-	public DbSet<MeasurementEnvironment> MeasurementEnvironments { get; set; }
-	public DbSet<MeasurementResult> MeasurementResults { get; set; }
-	public DbSet<ReferenceDosimeter> ReferenceDosimeters { get; set; }
+
+	public DbSet<Isotope> Isotopes => Set<Isotope>();
+	public DbSet<RadioactiveSource> RadioactiveSources => Set<RadioactiveSource>();
+	public DbSet<MeasurementEnvironment> MeasurementEnvironments => Set<MeasurementEnvironment>();
+	public DbSet<MeasurementResult> MeasurementResults => Set<MeasurementResult>();
+	public DbSet<ReferenceDosimeter> ReferenceDosimeters => Set<ReferenceDosimeter>();
 
 	public CalibrationContext(string path)
 	{

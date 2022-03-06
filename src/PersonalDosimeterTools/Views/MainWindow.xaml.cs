@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace PersonalDosimeterTools;
+namespace PersonalDosimeterTools.Views;
 /// <summary>
 /// Interaction logic for MainWindow.xaml
 /// </summary>

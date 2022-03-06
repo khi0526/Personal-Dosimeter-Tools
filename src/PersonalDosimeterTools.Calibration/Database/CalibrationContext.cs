@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using PersonalDosimeterTools.Calibration.Database.Configurations;
 using PersonalDosimeterTools.Calibration.Models;
 
@@ -6,21 +7,16 @@ namespace PersonalDosimeterTools.Calibration.Database;
 
 public class CalibrationContext : DbContext
 {
-	private readonly string _path;
-
 	public DbSet<Isotope> Isotopes => Set<Isotope>();
 	public DbSet<RadioactiveSource> RadioactiveSources => Set<RadioactiveSource>();
 	public DbSet<MeasurementEnvironment> MeasurementEnvironments => Set<MeasurementEnvironment>();
 	public DbSet<MeasurementResult> MeasurementResults => Set<MeasurementResult>();
 	public DbSet<ReferenceDosimeter> ReferenceDosimeters => Set<ReferenceDosimeter>();
 
-	public CalibrationContext(string path)
+	public CalibrationContext(DbContextOptions<CalibrationContext> options)
+		: base(options)
 	{
-		_path = path;
 	}
-
-	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-		=> optionsBuilder.UseSqlite($"Data Source={_path}");
 
 	protected override void OnModelCreating(ModelBuilder modelBuilder)
 	{
